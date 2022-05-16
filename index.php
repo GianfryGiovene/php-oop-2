@@ -8,3 +8,51 @@ BONUS:
 Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibili solo in un periodo particolare (es. da maggio ad agosto). 
 -->
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP Animals E-commerce</title>
+</head>
+
+<?php 
+    
+    include_once  __DIR__.'/entities/user.php';
+    include_once  __DIR__.'/entities/registeredUser.php';
+    include_once  __DIR__.'/entities/creditCard.php';
+    // include_once  __DIR__.'/entities/animal.php';
+    // include_once  __DIR__.'/entities/product.php';
+    // include_once  __DIR__.'/entities/food.php';
+    // include_once  __DIR__.'/entities/kennel.php';
+    // include_once  __DIR__.'/entities/toy.php';
+        
+    $utente = new User ('Pippo','Palermo','pippo@pino.it',$creditCard = new CreditCard('123456789','20/20/2025'));
+    echo '<h3>Dati Utente non registrato </h3>';
+    echo ('nome: '.$utente->setName(). '<br>');
+    echo ('cognome: '.$utente->setSurname(). '<br>');
+    echo ('ID utente: '.$utente->setUserID(). '<br>');
+    echo ('email: '.$utente->setEmail(). '<br>');
+    echo ('sconto: '.$utente->setDiscount(). '<br>');
+    var_dump($creditCard);
+
+
+    $utenteReg = new RegisteredUser ('12345','Crino','Parino','parino@lillo.com');
+
+    var_dump($utenteReg);
+    
+
+    
+?>
+
+
+<body>
+    
+</body>
+</html>
+
+
+
+

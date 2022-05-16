@@ -2,10 +2,11 @@
 
 <?php 
     class Product{
-        public $name;
-        public $category;
-        public $price;
-        private $productID;
+        protected $name;
+        protected $category;
+        protected $price;
+        protected $productID;
+        
     }
 
 ?>
