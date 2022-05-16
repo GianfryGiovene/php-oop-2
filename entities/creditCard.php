@@ -5,13 +5,13 @@
     class CreditCard {
         protected $cardNumber;
         protected $expirationDate;
-        public $isExpired;
+        protected $isExpired;
 
         function __construct($cardNumber, $expirationDate){
             $this->cardNumber = $cardNumber;
             $this->expirationDate = $expirationDate;
         }
-
+        // da rivedere, non funziona
         public function getCardExpirationDate(){
             if($this->expirationDate < date("d/m/Y")){
                 $this->isExpired = false;

@@ -7,14 +7,22 @@ include __DIR__.'/creditCard.php';
         protected $surname;
         protected $email;
         protected $userID;
-        protected $discount = 0;
+        protected $discount;
         protected $creditCard;
+        protected $isRegistered;
 
-        function __construct($name,$surname,$email,CreditCard $creditCard){
+        function __construct($name,$surname,$email,$isRegistered, CreditCard $creditCard){
             $this->name = $name;
             $this->surname = $surname;
             $this->email = $email;
             $this->userID = rand(1,100000);
+            $this->isRegistered = $isRegistered;
+
+            if ($this->isRegistered){
+                $this->discount = 20;
+            }else{
+                $this->discount = 0;
+            }
         }
 
         public function setName(){
@@ -42,14 +50,6 @@ include __DIR__.'/creditCard.php';
             return $this->creditCard;
         }
 
-        public function canBuy(){
-            $userCard = $this->CreditCard;
-            if($userCard->isExpired){
-                return 'Goditi gli acquisti';
-            }else{
-                return 'La tua carta è scaduta';
-            }
-        }
     }
 
 

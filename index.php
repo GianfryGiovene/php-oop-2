@@ -21,27 +21,26 @@ Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibil
 <?php 
     
     include_once  __DIR__.'/entities/user.php';
-    include_once  __DIR__.'/entities/registeredUser.php';
     include_once  __DIR__.'/entities/creditCard.php';
-    // include_once  __DIR__.'/entities/animal.php';
-    // include_once  __DIR__.'/entities/product.php';
+    include_once  __DIR__.'/entities/product.php';
     // include_once  __DIR__.'/entities/food.php';
     // include_once  __DIR__.'/entities/kennel.php';
     // include_once  __DIR__.'/entities/toy.php';
         
-    $utente = new User ('Pippo','Palermo','pippo@pino.it',$creditCard = new CreditCard('123456789','20/20/2025'));
-    echo '<h3>Dati Utente non registrato </h3>';
+    $utente = new User ('Pippo','Palermo','pippo@pino.it',true, $creditCard = new CreditCard('123456789','20/20/2025'));
+    echo '<h3>Dati Utente </h3>';
     echo ('nome: '.$utente->setName(). '<br>');
     echo ('cognome: '.$utente->setSurname(). '<br>');
     echo ('ID utente: '.$utente->setUserID(). '<br>');
     echo ('email: '.$utente->setEmail(). '<br>');
     echo ('sconto: '.$utente->setDiscount(). '<br>');
     var_dump($creditCard);
+    echo '<br>';
 
+    $product = new Product ('Fifillo','Valenzana',20.50,'Orso',12345,true);
+    var_dump($product);
 
-    $utenteReg = new RegisteredUser ('12345','Crino','Parino','parino@lillo.com');
-
-    var_dump($utenteReg);
+    
     
 
     
