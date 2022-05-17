@@ -23,9 +23,9 @@ Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibil
     include_once  __DIR__.'/entities/user.php';
     include_once  __DIR__.'/entities/creditCard.php';
     include_once  __DIR__.'/entities/product.php';
-    // include_once  __DIR__.'/entities/food.php';
-    // include_once  __DIR__.'/entities/kennel.php';
-    // include_once  __DIR__.'/entities/toy.php';
+    include_once  __DIR__.'/entities/food.php';
+    include_once  __DIR__.'/entities/kennel.php';
+    include_once  __DIR__.'/entities/toy.php';
         
     $utente = new User ('Pippo','Palermo','pippo@pino.it',true, $creditCard = new CreditCard('123456789','20/20/2025'));
     echo '<h3>Dati Utente </h3>';
@@ -35,11 +35,11 @@ Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibil
     echo ('email: '.$utente->setEmail(). '<br>');
     echo ('sconto: '.$utente->setDiscount(). '<br>');
     var_dump($creditCard);
-    echo '<br>';
+    echo ('<br>');
 
-    $product = new Product ('Fifillo','Valenzana',20.50,'Orso',12345,true);
+    $product = new Product ('Fifillo','Valenzana','Orso',12345,true);
     var_dump($product);
-
+    
     
     
 
